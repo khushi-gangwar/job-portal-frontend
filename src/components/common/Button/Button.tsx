@@ -7,7 +7,7 @@ export default function CustomButton({ props }: { props: ButtonInterface }) {
       <button
         onClick={props.onClick}
         disabled={props.type === "submit" ? false : true}
-        className={`rounded-md border border-[#243c5a]-600 shadow-md p-2  ${props.className}`}
+        className={`rounded-lg border border-[#243c5a]-600 shadow-md px-8 py-2  ${props.className}`}
         type={props.type}
       >
         {props.name}

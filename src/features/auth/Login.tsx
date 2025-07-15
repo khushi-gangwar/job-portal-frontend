@@ -65,8 +65,9 @@ const res=await login(formData);
             }}
           />
         </div>
+                <div className="flex items-center justify-center space-x-2">
         <p>Don't have an account?</p>
-        <Link to="/login" className="text-blue-600 hover:underline">Register </Link>
+        <Link to="/register" className="text-blue-600 hover:underline">Register </Link></div>
       </form>
     </AuthLayout>
   )

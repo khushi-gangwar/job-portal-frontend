@@ -27,8 +27,8 @@ const AuthLayout = ({ title, children }: AuthLayoutProps) => {
 
   return (
    
-<div className="flex justify-center items-center min-h-screen p-4 bg-blue-100">
-  <div className="bg-white p-6 rounded shadow max-w-sm w-full">
+<div className="flex justify-center items-center min-h-screen p-4 bg-blue-100 shadow-lg">
+  <div className="bg-white p-6 rounded shadow-lg text-shadow-amber-50 max-w-sm w-full">
     {title && <h2 className="text-3xl font-bold mb-6 text-center">{title}</h2>}
     {children}
   </div>
