@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Navbar from "./../../components/common/Navbar/Navbar";
 import { FiSearch } from "react-icons/fi";
-
+import JobSearchBar from '@/components/common/SearchBar/JobSearchBar';
 const Home = () => {
   return (
     <div>
@@ -22,14 +22,20 @@ const Home = () => {
         </p>
 
   
-          <div className="flex items-center gap-3 max-w-4xl bg-white border border-gray-300 rounded-full px-8 py-6 shadow-md shadow-cyan-200 mt-8 w-full">
-            <FiSearch className="text-blue-500 text-3xl" />
-            <input
-              type="text"
-              placeholder="Search with style..."
-              className="w-full outline-none text-gray-700  placeholder-gray-400 bg-transparent"
-            />
+       
+          <JobSearchBar/>
+        </div>
+        
+        <div className='bg-cover flex bg-center ' style={{ background:"#A9B5DF"}}> 
+          <div className="left size-40 w-1/2 flex items-center justify-center text-white m-15">
+            <h1 className="text-6xl ">Find the right job<br/>
+             or internship for you</h1>
           </div>
+          <div className="middle size-40 w-1/2 flex items-center justify-center text-white m-15">
+          <img src="/job2.png" alt="Job Search" className="w-auto h-100" />
+          </div>
+          {/* <div className="right">  <h1 className="text-6xl">Explore opportunities<br/>
+             that match your skills</h1></div> */}
         </div>
       </div>
   );
