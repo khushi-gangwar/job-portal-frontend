@@ -2,7 +2,9 @@ import React, { JSX, useEffect, useRef } from 'react'
 import { steps } from "@/data/stepsData"; // Adjust the import path as necessary
 import { Step } from '@/libs/interfaces/home-interface';
 import { motion, useAnimation, useInView } from 'framer-motion';
-// Step type
+
+
+
 
 const StepCard: React.FC<Step> = ({ icon, title, description, step }) => {
   const ref=useRef(null);
