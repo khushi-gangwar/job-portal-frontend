@@ -1,42 +1,45 @@
-import React, { JSX } from 'react'
-import { FiCheckCircle, FiFileText, FiSearch } from 'react-icons/fi';
+import React, { JSX, useEffect, useRef } from 'react'
+import { steps } from "@/data/stepsData"; // Adjust the import path as necessary
+import { Step } from '@/libs/interfaces/home-interface';
+import { motion, useAnimation, useInView } from 'framer-motion';
 // Step type
-interface Step {
-  icon: JSX.Element;
-  title: string;
-  description: string;
-  step: string;
-}
-const StepCard: React.FC<Step> = ({ icon, title, description, step }) => (
-  <div className="border rounded-xl p-6 shadow-lg hover:shadow-md transition text-center">
-    <div className="mb-4 flex justify-center">
+
+const StepCard: React.FC<Step> = ({ icon, title, description, step }) => {
+  const ref=useRef(null);
+  const isInView=useInView(ref,{once:true});
+    const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 0.4,
+          scale: {
+            type: "spring",
+            bounce: 0.5,
+            duration: 0.4,
+          },
+        },
+      });
+    }
+  }, [isInView, controls]);
+return(
+<motion.div
+    ref={ref}
+    initial={{ opacity: 0, scale: 0 }}
+    animate={controls}
+    className="border rounded-xl p-6 shadow-lg hover:shadow-md transition text-center"
+  >    <div className="mb-4 flex justify-center">
       <span className="text-blue-500 text-3xl">{icon}</span>
     </div>
     <h3 className="font-semibold text-lg">{title}</h3>
     <p className="text-gray-500 text-sm">{description}</p>
-  </div>
+  </motion.div>
 );
 
-const steps: Step[] = [
-    {
-    icon: <FiSearch />,
-    title: "Search Jobs",
-    description: "Browse thousands of job openings from top companies across various industries.",
-    step: "01",
-  },
-  {
-    icon: <FiFileText />,
-    title: "Apply Easily",
-    description: "Submit your application with just a few clicks. Upload your resume and cover letter.",
-    step: "02",
-  },
-  {
-    icon: <FiCheckCircle />,
-    title: "Get Hired",
-    description: "Connect with employers, schedule interviews, and land your dream job.",
-    step: "03",
-  },
-    ];
+}
 
 const HowItWork = () => {
   return (

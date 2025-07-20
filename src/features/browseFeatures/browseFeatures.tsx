@@ -1,4 +1,6 @@
-import React from "react";
+import { Category } from "@/libs/interfaces/home-interface";
+import { motion, useAnimation, useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import {
   FiCode,
   FiBriefcase,
@@ -9,21 +11,73 @@ import {
   FiTruck,
 } from "react-icons/fi";
 
-// 🔹 TypeScript interface for category props
-interface Category {
-  icon: React.ReactElement;
-  title: string;
-  jobs: string;
-}
 
-// 🔹 Reusable component - SRP
-const CategoryCard: React.FC<Category> = ({ icon, title, jobs }) => (
-  <div className="rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition text-center">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="font-semibold text-lg">{title}</h3>
-    <p className="text-gray-500 text-sm">{jobs} jobs</p>
-  </div>
-);
+const CategoryCard: React.FC<Category> = ({ icon, title, jobs }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 0.4,
+          scale: {
+            type: "spring",
+            bounce: 0.5,
+            duration: 0.4,
+          },
+        },
+      });
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={controls}
+      className="rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition text-center"
+    >
+      <div className="mb-4 flex justify-center">{icon}</div>
+      <h3 className="font-semibold text-lg">{title}</h3>
+      <p className="text-gray-500 text-sm">{jobs} jobs</p>
+    </motion.div>
+  );
+};
+
+// const CategoryCard: React.FC<Category> = ({ icon, title, jobs }) => {
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: true });
+//   const animationControls = useAnimation();
+
+//   useEffect(() => {
+//     if (isInView) {
+//       animationControls.start({
+//         opacity: 1,
+//         y: 0,
+//         scale: 1,
+//         transition: { duration: 0.1, ease: "easeOut" },
+//       });
+//     }
+//   }, [isInView, animationControls]);
+
+//   return (
+//     <motion.div
+//       ref={ref}
+//       initial={{ opacity: 0, y: 30, scale: 0.1 }} // Start tiny, down, and invisible
+//       animate={animationControls}
+//       className="rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition text-center"
+//     >
+//       <div className="mb-4 flex justify-center">{icon}</div>
+//       <h3 className="font-semibold text-lg">{title}</h3>
+//       <p className="text-gray-500 text-sm">{jobs} jobs</p>
+//     </motion.div>
+//   );
+// };
+
 
 // 🔹 Category list - OCP compliant
 const categories: Category[] = [

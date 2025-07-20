@@ -1,10 +1,10 @@
 import * as React from "react";
-import Navbar from "./../../components/common/Navbar/Navbar";
+import Navbar from "../../components/common/Navbar/Navbar";
 import { FiSearch } from "react-icons/fi";
 import JobSearchBar from "@/components/common/SearchBar/JobSearchBar";
-import JobCategories from "../browseFeatures/browseFeatures";
-import HowItWork from "../howItWork/howItWork";
-import Footer from "../footer/footer";
+import JobCategories from "../../features/browseFeatures/browseFeatures";
+import HowItWork from "../../features/howItWork/howItWork";
+import Footer from "../../features/footer/footer";
 
 const Home = () => {
   return (

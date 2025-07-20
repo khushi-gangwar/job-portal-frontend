@@ -1,7 +1,7 @@
 import Register from "@/features/auth/Register";
 import {BrowserRouter as Router, Routes,Route } from "react-router-dom";
 import Login from "./features/auth/Login";
-import Home from "./features/home/home";
+import Home from "./pages/home/home";
 import About from "./features/about/About";
 
 

@@ -11,10 +11,10 @@ const Navbar: React.FC = () => {
             <NavLink to="/home" className={({isActive})=>isActive ?"text-yellow-300 font-semibold" :"hover:text-red-200"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about" className={({isActive})=>isActive ? "text-yellow-300 font-semibold" :"hover:text-red-200"}>About</NavLink>
+            <NavLink to="/about" className={({isActive})=>isActive ? "text-yellow-300 font-semibold" :"hover:text-red-200"}>Find Jobs</NavLink>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-gray-200">Contact</Link>
+            <Link to="/contact" className="hover:text-gray-200">Companies and It Parks</Link>
           </li>
         </ul>
       </div>
