@@ -13,7 +13,7 @@ const Footer = () => {
             </div>
             <span className="text-lg font-semibold text-black">JobPortal</span>
           </div>
-          <p className="text-sm">
+          <p className="text-lg">
             Connecting talented professionals with amazing opportunities worldwide.
           </p>
           <div className="flex gap-4 mt-4 text-xl text-gray-600">
@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="flex items-center gap-6 mb-2">
             <div >
           <h3 className="text-black font-semibold mb-3">For Job Seekers</h3>
-          <ul className="text-sm space-y-2">
+          <ul className="text-lg space-y-2">
             <li>Browse Jobs</li>
             <li>Career Advice</li>
             <li>Resume Builder</li>
@@ -40,7 +40,7 @@ const Footer = () => {
         {/* For Employers */}
       
           <h3 className="text-black font-semibold mb-3">For Employers</h3>
-          <ul className="text-sm space-y-2">
+          <ul className="text-lg space-y-2">
             <li>Post a Job</li>
             <li>Search Resumes</li>
             <li>Pricing</li>
@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Stay Updated */}
         <div>
           <h3 className="text-black font-semibold mb-3">Stay Updated</h3>
-          <p className="text-sm mb-3">
+          <p className="text-lg mb-3">
             Get the latest job opportunities and career tips delivered to your inbox.
           </p>
           <input

@@ -36,8 +36,8 @@ return(
   >    <div className="mb-4 flex justify-center">
       <span className="text-blue-500 text-3xl">{icon}</span>
     </div>
-    <h3 className="font-semibold text-lg">{title}</h3>
-    <p className="text-gray-500 text-sm">{description}</p>
+    <h3 className="font-semibold text-xl">{title}</h3>
+    <p className="text-gray-500 text-lg">{description}</p>
   </motion.div>
 );
 
@@ -46,8 +46,8 @@ return(
 const HowItWork = () => {
   return (
   <section className="text-center px-6 py-16 bg-white" >
-      <h2 className="text-4xl font-bold mb-3">How It Works</h2>
-      <p className="text-gray-700 mb-12">
+      <h2 className="text-6xl font-bold mb-3">How It Works</h2>
+      <p className="text-gray-700 mb-12 text-3xl">
         Getting your dream job is easier than ever. Follow these simple steps to start your journey.
       </p>
 

@@ -42,8 +42,8 @@ const CategoryCard: React.FC<Category> = ({ icon, title, jobs }) => {
       className="rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition text-center"
     >
       <div className="mb-4 flex justify-center">{icon}</div>
-      <h3 className="font-semibold text-lg">{title}</h3>
-      <p className="text-gray-500 text-sm">{jobs} jobs</p>
+      <h3 className="font-semibold text-xl">{title}</h3>
+      <p className="text-gray-500 text-lg">{jobs} jobs</p>
     </motion.div>
   );
 };
@@ -93,9 +93,9 @@ const categories: Category[] = [
 // 🔹 Main component
 const JobCategories: React.FC = () => {
   return (
-    <section className="text-center px-6 py-12" style={{ background: "#F3F4F6" }}>
-      <h2 className="text-4xl font-bold mb-2">Browse Jobs by Category</h2>
-      <p className="text-gray-500 mb-10">
+    <section className="text-center px-12 py-20" style={{ background: "#F3F4F6" }}>
+      <h2 className="text-6xl font-bold mb-2">Browse Jobs by Category</h2>
+      <p className="text-gray-500 text-3xl mb-10">
         Explore opportunities across various industries and find the perfect match for your skills.
       </p>
 
@@ -105,7 +105,7 @@ const JobCategories: React.FC = () => {
         ))}
       </div>
 
-      <button className="mt-10 px-5 py-2 border rounded-full text-sm hover:bg-gray-100 transition">
+      <button className="mt-10 px-5 py-2 border rounded-full text-lg hover:bg-gray-100 transition">
         View All Categories
       </button>
     </section>

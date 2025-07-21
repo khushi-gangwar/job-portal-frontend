@@ -5,8 +5,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className=" p-8 text-white shadow-md" style={{ backgroundColor: '#213448' }}>
       <div className="max-w-7xl mx-auto flex justify-between items-center ">
-        <div className="text-xl font-bold ">JobPortal</div>
-        <ul className="flex space-x-6">
+        <div className="text-2xl font-bold ">JobPortal</div>
+        <ul className="flex space-x-8 sm:space-x-6 text-sm sm:text-base md:text-xl">
           <li>
             <NavLink to="/home" className={({isActive})=>isActive ?"text-yellow-300 font-semibold" :"hover:text-red-200"}>Home</NavLink>
           </li>
