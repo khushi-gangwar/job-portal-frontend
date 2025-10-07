@@ -29,3 +29,8 @@ export interface ButtonInterface{
     disabled?: boolean;
 
 }
+export interface AuthState{
+  username:string;
+  email:string;
+  token:string;
+}

@@ -1,6 +1,6 @@
 import { LoginFormInterface, RegisterFormInterface } from "@/libs/interfaces/auth-interfaces";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
+import {useNavigate} from "react-router-dom";
 export const AuthApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5174" }),

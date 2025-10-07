@@ -1,5 +1,5 @@
 import { FiSearch, FiFileText, FiCheckCircle } from "react-icons/fi";
-import { Step } from "../libs/interfaces/step-interface"; // assuming you place the interface in a types folder
+import { Step } from "../libs/interfaces/home-interface"; // assuming you place the interface in a types folder
 
 export const steps: Step[] = [
   {
